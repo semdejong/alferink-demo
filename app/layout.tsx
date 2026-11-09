@@ -79,7 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-papier pb-16 text-ink md:pb-0">
         <div id="site" className="flex min-h-full flex-col">
           <Header />
-          <main id="inhoud" className="flex-1">
+          <main id="inhoud" className="flex-1 max-md:pt-10">
             {children}
           </main>
           <Footer />

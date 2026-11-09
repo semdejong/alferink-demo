@@ -16,23 +16,22 @@ export default function ContactPage() {
         title="Neem vrijblijvend contact op"
         lede="Drie manieren, zonder omweg. Bellen heeft de voorkeur. Voor glas dat per direct vervangen moet worden, gebruikt u de 24-uur glasservice."
       />
-      <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-10 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-stretch gap-8 px-5 pt-10 lg:grid-cols-2">
         <ContactCard />
-        <div className="space-y-4">
-          <BonSheet
-            stamp="Drie wegen"
-            title="Huurnerhof 7"
-            rows={[
-              { mark: "Bellen", text: "06-54244846. De snelste weg, ook wanneer een ruit per direct vervangen moet worden." },
-              { mark: "Mailen", text: "info@alferink-schilderwerken.nl. Voor een vraag of om een afspraak te maken." },
-              { mark: "Offerte", text: "Het formulier opent uw mailprogramma. Er wordt niets stil verstuurd." },
-            ]}
-          />
-          <div className="flex flex-col items-start gap-3">
-            <PhoneLink />
-            <OfferteLink />
-          </div>
-        </div>
+        <BonSheet
+          className="h-full"
+          stamp="Drie wegen"
+          title="Huurnerhof 7"
+          rows={[
+            { mark: "Bellen", text: "06-54244846. De snelste weg, ook wanneer een ruit per direct vervangen moet worden." },
+            { mark: "Mailen", text: "info@alferink-schilderwerken.nl. Voor een vraag of om een afspraak te maken." },
+            { mark: "Offerte", text: "Het formulier opent uw mailprogramma. Er wordt niets stil verstuurd." },
+          ]}
+        />
+      </div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-6 sm:flex-row">
+        <PhoneLink />
+        <OfferteLink />
       </div>
       <div className="mx-auto max-w-6xl px-5 pb-12">
         <BonSheet

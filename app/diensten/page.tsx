@@ -51,7 +51,7 @@ export default function DienstenPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {items.map((item) => (
             <article key={item.href} className="werkbon">
-              <FrameImage photo={item.photo} sizes="(max-width: 768px) 100vw, 560px" />
+              <FrameImage photo={item.photo} sizes="(max-width: 768px) 100vw, 560px" fit="cover" />
               <div className="p-5">
                 <div className="flex flex-wrap items-center gap-3">
                   <h2 className="font-display text-2xl font-bold">{item.title}</h2>

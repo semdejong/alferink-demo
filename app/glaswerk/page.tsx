@@ -70,7 +70,7 @@ export default function GlaswerkPage() {
         <p className="mt-3 max-w-2xl">Een van de glassoorten uit het werk, geplaatst in een wit kozijn.</p>
       </div>
       <div className="mx-auto max-w-6xl px-5 pb-16">
-        <Gallery groups={[glasBehangGroups[0]]} />
+        <Gallery groups={[glasBehangGroups[0]]} showTitles={false} />
       </div>
       <ClosingCta
         title="Glas per direct of een offerte"

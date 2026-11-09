@@ -91,7 +91,7 @@ export default function Home() {
           {content.facts.map((fact, index) => (
             <li key={fact} className="flex items-center">
               <span className="px-2 py-3 font-mono text-[0.72rem] tracking-[0.08em] text-ink uppercase">{fact}</span>
-              {index < content.facts.length - 1 ? <span className="kitlijn h-3 w-3 rounded-[2px]" aria-hidden="true" /> : null}
+              {index < content.facts.length - 1 ? <span className="punch" aria-hidden="true" /> : null}
             </li>
           ))}
         </ul>
@@ -101,8 +101,10 @@ export default function Home() {
         <SectionHeading eyebrow="Werkzaamheden" title="Schilderen, glas, behang en spuitwerk" />
         <div className="mt-8 space-y-5">
           {services.map((service) => (
-            <article key={service.href} className="werkbon grid md:grid-cols-[240px_1fr]">
-              <FrameImage photo={service.photo} sizes="(max-width: 768px) 100vw, 240px" />
+            <article key={service.href} className="werkbon grid md:grid-cols-[18rem_1fr]">
+              <div className="relative aspect-[4/3] overflow-hidden md:aspect-auto md:h-full md:min-h-56">
+                <FrameImage photo={service.photo} sizes="(max-width: 768px) 100vw, 288px" fit="fill" />
+              </div>
               <div className="p-5 md:p-6">
                 <div className="flex flex-wrap items-center gap-3">
                   <h3 className="font-display text-2xl font-bold">{service.title}</h3>
@@ -136,7 +138,7 @@ export default function Home() {
             {featuredPhotos.map((photo) => (
               <li key={photo.id}>
                 <Link href={`/projecten#${photo.id}`} className="werkbon block">
-                  <FrameImage photo={photo} sizes="(max-width: 768px) 84vw, 280px" />
+                  <FrameImage photo={photo} sizes="(max-width: 768px) 84vw, 280px" fit="cover" />
                   <span className="werkbon-caption block">{photo.stamp}</span>
                 </Link>
               </li>
@@ -151,7 +153,7 @@ export default function Home() {
           {content.reasons.map((reason) => (
             <li key={reason.title} className="border border-dashed border-ink bg-white px-4 py-4">
               <div className="flex items-center gap-3">
-                <span className="kitlijn h-3 w-3 shrink-0 rounded-[2px]" aria-hidden="true" />
+                <span className="punch" aria-hidden="true" />
                 <p className="font-display text-xl font-bold">{reason.title}</p>
               </div>
               <p className="mt-2 text-base leading-relaxed">{reason.text}</p>

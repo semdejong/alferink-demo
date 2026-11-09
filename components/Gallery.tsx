@@ -7,7 +7,7 @@ import type { JobGroup, JobPhoto } from "@/lib/jobs";
 
 type Flat = JobPhoto & { index: number };
 
-export default function Gallery({ groups }: { groups: JobGroup[] }) {
+export default function Gallery({ groups, showTitles = true }: { groups: JobGroup[]; showTitles?: boolean }) {
   const reactId = useId();
   const flat: Flat[] = groups.flatMap((group) => group.photos).map((photo, index) => ({ ...photo, index }));
   const [open, setOpen] = useState<number | null>(null);
@@ -50,11 +50,13 @@ export default function Gallery({ groups }: { groups: JobGroup[] }) {
     <div className="min-w-0 space-y-10">
       {groups.map((group) => (
         <section key={group.id} id={group.id} aria-labelledby={`${reactId}-${group.id}`}>
-          <h3 id={`${reactId}-${group.id}`} className="font-display text-2xl font-bold text-ink">
+          <h3 id={`${reactId}-${group.id}`} className={showTitles ? "font-display text-2xl font-bold text-ink" : "sr-only"}>
             {group.title}
           </h3>
           {group.note ? <p className="mt-1 max-w-2xl text-base text-kit">{group.note}</p> : null}
-          <ul className="snap-row mt-4">
+          <ul
+            className={`snap-row mt-4 ${group.photos.length === 1 ? "snap-row-one" : ""} ${group.photos.length === 2 ? "snap-row-pair" : ""}`}
+          >
             {group.photos.map((photo) => {
               const index = flat.findIndex((item) => item.id === photo.id);
               return (
@@ -67,7 +69,7 @@ export default function Gallery({ groups }: { groups: JobGroup[] }) {
                       aria-haspopup="dialog"
                       aria-labelledby={`${reactId}-cap-${photo.id}`}
                     >
-                      <FrameImage photo={photo} sizes="(max-width: 768px) 84vw, 280px" />
+                      <FrameImage photo={photo} sizes="(max-width: 768px) 84vw, 360px" fit="cover" />
                     </button>
                     <figcaption id={`${reactId}-cap-${photo.id}`} className="werkbon-caption">
                       {photo.stamp}

@@ -129,6 +129,15 @@ summary::-webkit-details-marker {
   background: var(--blad);
 }
 
+.punch {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: none;
+  border-radius: 1px;
+  background: var(--glas);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .kitlijn-draw {
     animation: kit-draw 700ms ease both;
@@ -344,6 +353,17 @@ summary::-webkit-details-marker {
 @media (min-width: 1024px) {
   .snap-row {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .snap-row-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 52rem;
+  }
+
+  .snap-row-one {
+    grid-template-columns: minmax(0, 40rem);
   }
 }
 

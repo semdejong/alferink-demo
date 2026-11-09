@@ -324,7 +324,7 @@ export const sauswerk: JobGroup = {
 export const spuit2016: JobGroup[] = [bolswardVoor, bolswardNa, garagebox, sauswerk];
 
 export const schilderGroups: JobGroup[] = [
-  { id: "schilderwerk", title: "Schilderwerk", photos: schilderAlgemeen },
+  { id: "schilderwerk", title: "Binnen en buiten", photos: schilderAlgemeen },
   hengelo,
   doetinchem,
 ];

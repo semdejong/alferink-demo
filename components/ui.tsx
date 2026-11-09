@@ -144,7 +144,7 @@ export function FaqList() {
 export function ContactCard() {
   const { contact } = content;
   return (
-    <address className="werkbon p-5 md:p-6">
+    <address className="werkbon h-full p-5 md:p-6">
       <p className="stamp">Contact</p>
       <p className="mt-2 font-display text-2xl font-bold text-ink">{content.company.name}</p>
       <Kitlijn className="mt-3 w-12" />

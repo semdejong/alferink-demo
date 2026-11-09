@@ -20,45 +20,37 @@ export default function SpuitwerkPage() {
         title="Spuitwerk met een strakke afwerking"
         lede="Met ons spuitwerk krijgt u een strakke afwerking van deuren, kozijnen, wanden en plafonds. Er zijn verschillende mogelijkheden qua structuur en kleur."
       />
-      <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="space-y-4">
-          <BonSheet
-            stamp="Inhoud · spuitwerk"
-            title="Strakke afwerking"
-            rows={[
-              { mark: "Deuren", text: "Deuren, kozijnen, wanden en plafonds, met keuze in structuur en kleur." },
-              { mark: "Damwand", text: "Gespecialiseerd in het spuiten van damwandplaten en houten wanden." },
-              { mark: "Dak", text: "Dakreiniging en een nieuwe dakcoating, zodat het dak er weer als nieuw uitziet." },
-              { mark: "Pannen", text: "Een goede coating geeft de dakpannen een langere levensduur." },
-              { mark: "Weer", text: "Zo krijgen wisselende weersomstandigheden minder grip op het dak." },
-            ]}
-          />
-          <div className="prose-tight space-y-4">
-          <p>Tevens zijn wij gespecialiseerd in het spuiten van damwandplaten en houten wanden.</p>
-          <p>
-            Daarnaast bent u bij ons aan het juiste adres wanneer uw dak schoongemaakt moet worden of wanneer uw dak
-            een nieuwe dakcoating nodig heeft. Hierdoor ziet uw dak er weer als nieuw uit en hebben de dakpannen een
-            langere levensduur. Met een goede dakcoating voorkomt u dat de wisselende weersomstandigheden grip krijgen
-            op uw dak.
-          </p>
-          <p>
-            Heeft u vragen over spuitwerk? Wij adviseren u graag vrijblijvend. Bel{" "}
-            <a href="tel:+31654244846" data-cta="bellen" className="text-link underline underline-offset-4">
-              06-54244846
-            </a>{" "}
-            of vraag een{" "}
-            <Link href="/offerte" data-cta="offerte" className="text-link underline underline-offset-4">
-              vrijblijvende offerte
-            </Link>
-            .
-          </p>
+      <div className="mx-auto grid max-w-6xl items-stretch gap-8 px-5 py-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <BonSheet
+          className="h-full"
+          stamp="Inhoud · spuitwerk"
+          title="Strakke afwerking"
+          rows={[
+            { mark: "Deuren", text: "Deuren, kozijnen, wanden en plafonds, met keuze in structuur en kleur." },
+            { mark: "Damwand", text: "Gespecialiseerd in het spuiten van damwandplaten en houten wanden." },
+            { mark: "Dak", text: "Dakreiniging en een nieuwe dakcoating, zodat het dak er weer als nieuw uitziet." },
+            { mark: "Pannen", text: "Een goede coating geeft de dakpannen een langere levensduur." },
+            { mark: "Weer", text: "Zo krijgen wisselende weersomstandigheden minder grip op het dak." },
+          ]}
+        />
+        <figure className="werkbon flex h-full flex-col">
+          <div className="relative min-h-56 flex-1">
+            <FrameImage photo={damwandPhoto} sizes="(max-width: 1024px) 100vw, 520px" fit="fill" />
           </div>
-        </div>
-        <figure className="werkbon">
-          <FrameImage photo={damwandPhoto} sizes="(max-width: 1024px) 100vw, 480px" />
           <figcaption className="werkbon-caption">{damwandPhoto.stamp}</figcaption>
         </figure>
       </div>
+      <p className="mx-auto max-w-6xl px-5 pb-8">
+        Heeft u vragen over spuitwerk? Wij adviseren u graag vrijblijvend. Bel{" "}
+        <a href="tel:+31654244846" data-cta="bellen" className="text-link underline underline-offset-4">
+          06-54244846
+        </a>{" "}
+        of vraag een{" "}
+        <Link href="/offerte" data-cta="offerte" className="text-link underline underline-offset-4">
+          vrijblijvende offerte
+        </Link>
+        .
+      </p>
 
       <div className="mx-auto max-w-6xl px-5 pb-16">
         <h2 className="font-display text-3xl font-bold">Klussen 2017</h2>

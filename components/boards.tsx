@@ -4,13 +4,15 @@ export function BonSheet({
   stamp,
   title,
   rows,
+  className = "",
 }: {
   stamp: string;
   title?: string;
   rows: { mark: string; text: string }[];
+  className?: string;
 }) {
   return (
-    <div className="werkbon">
+    <div className={`werkbon ${className}`}>
       <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-dashed border-ink px-4 py-3">
         <p className="stamp">{stamp}</p>
         {title ? <p className="font-mono text-[0.68rem] tracking-[0.12em] text-ink uppercase">{title}</p> : null}
