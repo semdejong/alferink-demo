@@ -11,6 +11,7 @@ import {
 import type { JobPhoto } from "@/lib/jobs";
 import FrameImage from "@/components/FrameImage";
 import Noodbord from "@/components/Noodbord";
+import { PlaceRail } from "@/components/boards";
 import {
   ContactCard,
   FaqList,
@@ -134,7 +135,7 @@ export default function Home() {
           <ul className="snap-row mt-6">
             {featuredPhotos.map((photo) => (
               <li key={photo.id}>
-                <Link href={`/projecten#${photo.id}`} className="werkbon block h-full">
+                <Link href={`/projecten#${photo.id}`} className="werkbon block">
                   <FrameImage photo={photo} sizes="(max-width: 768px) 84vw, 280px" />
                   <span className="werkbon-caption block">{photo.stamp}</span>
                 </Link>
@@ -148,9 +149,12 @@ export default function Home() {
         <SectionHeading eyebrow="Waarom zaken doen met ons" title="Afspraken die wij nakomen" />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {content.reasons.map((reason) => (
-            <li key={reason} className="flex min-h-12 items-center gap-3 border-b border-ink/15 bg-white px-3">
-              <span className="kitlijn h-3 w-3 shrink-0 rounded-[2px]" aria-hidden="true" />
-              <span className="font-display text-xl font-bold">{reason}</span>
+            <li key={reason.title} className="border border-dashed border-ink bg-white px-4 py-4">
+              <div className="flex items-center gap-3">
+                <span className="kitlijn h-3 w-3 shrink-0 rounded-[2px]" aria-hidden="true" />
+                <p className="font-display text-xl font-bold">{reason.title}</p>
+              </div>
+              <p className="mt-2 text-base leading-relaxed">{reason.text}</p>
             </li>
           ))}
         </ul>
@@ -197,6 +201,20 @@ export default function Home() {
           </p>
           <Kitlijn className="mt-3 w-16" />
           <p className="mt-3 max-w-2xl">{content.area}</p>
+          <p className="stamp mt-8">Op de werkbon</p>
+          <p className="mt-2 max-w-2xl text-base">
+            Plaatsen die bij de foto’s staan. Het vaste werkgebied blijft Twente, Achterhoek en Salland, en ook daarbuiten.
+          </p>
+          <div className="mt-4">
+            <PlaceRail places={content.archivePlaces} />
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-4 gap-y-2 border-t border-ink/15 pt-4">
+            {content.voorWie.map((name) => (
+              <li key={name} className="font-mono text-[0.72rem] tracking-[0.08em] uppercase">
+                {name}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

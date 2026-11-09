@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { content } from "@/content";
+import { BonSheet } from "@/components/boards";
 import FrameImage from "@/components/FrameImage";
+import { schilderAlgemeen } from "@/lib/jobs";
 import { ClosingCta, Kitlijn, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -82,6 +84,26 @@ export default function OverJohanPage() {
             className="h-10 w-auto"
           />
         </div>
+      </div>
+
+      <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 pb-12 lg:grid-cols-[1.1fr_0.7fr]">
+        <BonSheet
+          stamp="Werkbon · constructies"
+          title="Sinds 1997"
+          rows={[
+            { mark: "Woningen", text: "Binnen- en buitenschilderwerk, glas, behang en onderhoud aan huis." },
+            { mark: "Bedrijfspanden", text: "Schilder-, onderhoud- en glaswerk, zodat het pand er verzorgd bij staat." },
+            { mark: "Scholen", text: "Onderhoud aan een instelling, bijvoorbeeld een school: strak en verzorgd." },
+            { mark: "Bruggen", text: "Grotere en industriële opdrachten, naast het werk aan huis." },
+            { mark: "Windmolens", text: "Ook molens schilderen wij. Op de foto staat de bus bij een windmolen." },
+            { mark: "Villa’s", text: "Villa’s en landhuizen horen bij de grotere particuliere opdrachten." },
+            { mark: "Gemeente", text: "Monumentale panden, parkeermeters en gemeente paaltjes." },
+          ]}
+        />
+        <figure className="werkbon">
+          <FrameImage photo={schilderAlgemeen[2]} sizes="(max-width: 1024px) 100vw, 420px" />
+          <figcaption className="werkbon-caption">{schilderAlgemeen[2].stamp}</figcaption>
+        </figure>
       </div>
 
       <section id="opdrachtgevers" data-section="opdrachtgevers" className="bg-white">

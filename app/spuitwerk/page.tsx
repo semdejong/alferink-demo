@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BonSheet } from "@/components/boards";
 import FrameImage from "@/components/FrameImage";
 import Gallery from "@/components/Gallery";
 import { ClosingCta, Kitlijn, PageHero } from "@/components/ui";
@@ -20,7 +21,19 @@ export default function SpuitwerkPage() {
         lede="Met ons spuitwerk krijgt u een strakke afwerking van deuren, kozijnen, wanden en plafonds. Er zijn verschillende mogelijkheden qua structuur en kleur."
       />
       <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="prose-tight space-y-4">
+        <div className="space-y-4">
+          <BonSheet
+            stamp="Inhoud · spuitwerk"
+            title="Strakke afwerking"
+            rows={[
+              { mark: "Deuren", text: "Deuren, kozijnen, wanden en plafonds, met keuze in structuur en kleur." },
+              { mark: "Damwand", text: "Gespecialiseerd in het spuiten van damwandplaten en houten wanden." },
+              { mark: "Dak", text: "Dakreiniging en een nieuwe dakcoating, zodat het dak er weer als nieuw uitziet." },
+              { mark: "Pannen", text: "Een goede coating geeft de dakpannen een langere levensduur." },
+              { mark: "Weer", text: "Zo krijgen wisselende weersomstandigheden minder grip op het dak." },
+            ]}
+          />
+          <div className="prose-tight space-y-4">
           <p>Tevens zijn wij gespecialiseerd in het spuiten van damwandplaten en houten wanden.</p>
           <p>
             Daarnaast bent u bij ons aan het juiste adres wanneer uw dak schoongemaakt moet worden of wanneer uw dak
@@ -39,6 +52,7 @@ export default function SpuitwerkPage() {
             </Link>
             .
           </p>
+          </div>
         </div>
         <figure className="werkbon">
           <FrameImage photo={damwandPhoto} sizes="(max-width: 1024px) 100vw, 480px" />

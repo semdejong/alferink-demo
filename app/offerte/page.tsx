@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BonSheet } from "@/components/boards";
 import OfferteForm from "@/components/OfferteForm";
 import Noodbord from "@/components/Noodbord";
 import { PageHero, PhoneLink } from "@/components/ui";
@@ -21,6 +22,16 @@ export default function OffertePage() {
       <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-10 lg:grid-cols-[1.25fr_0.75fr]">
         <OfferteForm />
         <aside className="space-y-4">
+          <BonSheet
+            stamp="Wat er in de mail komt"
+            title="Dit is een concept"
+            rows={[
+              { mark: "Van", text: "Uw naam, telefoon en e-mail, zodat het bericht aan u te koppelen is." },
+              { mark: "Werk", text: "De aangevinkte diensten, het type gebouw en uw toelichting." },
+              { mark: "Verzenden", text: "Uw mailprogramma opent. Pas als u op verzenden drukt, komt het bericht bij ons." },
+              { mark: "Daarna", text: "Wij komen graag langs om de situatie te bekijken en een vrijblijvende offerte te maken." },
+            ]}
+          />
           <Noodbord compact heading="p" />
           <div className="werkbon p-4">
             <p className="stamp">Liever bellen</p>

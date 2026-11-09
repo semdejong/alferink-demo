@@ -59,7 +59,7 @@ export default function Gallery({ groups }: { groups: JobGroup[] }) {
               const index = flat.findIndex((item) => item.id === photo.id);
               return (
                 <li key={photo.id} id={photo.id}>
-                  <figure className="werkbon h-full">
+                  <figure className="werkbon">
                     <button
                       type="button"
                       className="block w-full text-left"

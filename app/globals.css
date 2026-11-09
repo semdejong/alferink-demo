@@ -331,6 +331,7 @@ summary::-webkit-details-marker {
   .snap-row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
     overflow: visible;
     scroll-snap-type: none;
   }

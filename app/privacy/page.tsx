@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { content } from "@/content";
+import { BonSheet } from "@/components/boards";
 import { MailLink, PageHero, PhoneLink } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function PrivacyPage() {
         title="Privacy"
         lede="Deze pagina hoort bij een conceptwebsite voor J & J Alferink Schilderwerken. Het is een voorstel en geen afgesloten overeenkomst."
       />
-      <div className="mx-auto max-w-3xl space-y-4 px-5 py-10">
+      <div className="mx-auto grid max-w-3xl gap-4 px-5 py-10">
         <p>
           {company.name}, {contact.street}, {contact.postalCode} {contact.city}. E-mail:{" "}
           <MailLink className="text-link underline underline-offset-4" />. Telefoon:{" "}
@@ -25,19 +26,40 @@ export default function PrivacyPage() {
           </PhoneLink>
           .
         </p>
-        <p>
-          Een offerteaanvraag opent uw eigen mailprogramma met een bericht aan {contact.email}. Er wordt vanaf deze
-          site niets automatisch verzonden. Het bericht komt pas bij ons binnen als u het zelf verstuurt. Bewaar geen
-          gegevens in dit formulier: de invoer blijft in uw browser tot u de pagina verlaat.
-        </p>
-        <p>
-          Op deze conceptsite staat een cookieloos meetpunt van Sleads. Het script telt paginaweergaven voor deze demo
-          en plaatst geen trackingcookie. Er is geen account, geen nieuwsbrief en geen advertentiepixel.
-        </p>
-        <p>
-          Wilt u iets nawragen of een bericht laten schrappen dat u ons gemaild heeft, schrijf dan naar{" "}
-          <MailLink className="text-link underline underline-offset-4" />.
-        </p>
+        <BonSheet
+          stamp="Wie"
+          rows={[
+            {
+              mark: "Bedrijf",
+              text: `${company.name}, ${contact.street}, ${contact.postalCode} ${contact.city}.`,
+            },
+            { mark: "Bereikbaar", text: `${contact.email} en ${contact.phoneDisplay}.` },
+          ]}
+        />
+        <BonSheet
+          stamp="Uw bericht"
+          rows={[
+            { mark: "Formulier", text: "Een offerteaanvraag opent uw eigen mailprogramma. Vanaf deze site wordt niets automatisch verzonden." },
+            { mark: "Bewaren", text: "De invoer blijft in uw browser tot u de pagina verlaat. Het formulier slaat niets op." },
+            { mark: "Inbox", text: "Het bericht komt pas bij ons binnen als u het zelf verstuurt." },
+          ]}
+        />
+        <BonSheet
+          stamp="Meten"
+          rows={[
+            { mark: "Demo", text: "Op deze conceptsite staat een cookieloos meetpunt van Sleads. Het telt paginaweergaven voor deze demo." },
+            { mark: "Niet", text: "Geen trackingcookie, geen account, geen nieuwsbrief en geen advertentiepixel." },
+          ]}
+        />
+        <BonSheet
+          stamp="Vraag"
+          rows={[
+            {
+              mark: "Schrappen",
+              text: "Wilt u iets nawragen of een bericht laten schrappen dat u ons gemaild heeft, schrijf dan naar het e-mailadres hierboven.",
+            },
+          ]}
+        />
       </div>
     </>
   );

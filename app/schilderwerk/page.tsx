@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BonSheet } from "@/components/boards";
 import Gallery from "@/components/Gallery";
+import FrameImage from "@/components/FrameImage";
 import { ClosingCta, PageHero } from "@/components/ui";
-import { schilderGroups } from "@/lib/jobs";
+import { schilderAlgemeen, schilderGroups } from "@/lib/jobs";
 
 export const metadata: Metadata = {
   title: "Schilderwerk",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function SchilderwerkPage() {
+  const windmill = schilderAlgemeen[2];
+  const gevel = schilderAlgemeen[3];
   return (
     <>
       <PageHero
@@ -18,19 +22,38 @@ export default function SchilderwerkPage() {
         title="Schilderwerk voor woning en pand"
         lede="Goed schilderwerk zorgt voor een goede uitstraling van uw woning of bedrijfspand en heeft daarnaast een positieve invloed op de waarde van uw object."
       />
-      <div className="mx-auto max-w-6xl space-y-4 px-5 py-8 prose-tight">
+      <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <BonSheet
+          stamp="Inhoud · schilderwerk"
+          title="Haaksbergen"
+          rows={[
+            { mark: "Binnen", text: "Kozijnen, deuren en het sausen van plafonds en wanden." },
+            { mark: "Buiten", text: "Dezelfde zorg aan de gevel. Voor het hoge werk zetten wij een hoogwerker in." },
+            { mark: "Spuiten", text: "Muren, plafond en kozijnen kunnen ook gespoten worden, voor een strakke afwerking." },
+            { mark: "Onderhoud", text: "Met een onderhoudscontract wordt woning of pand periodiek bijgehouden, zodat het goed in de verf staat." },
+            { mark: "Wensen", text: "Uw eisen en wensen staan bij ons centraal. Een tevreden klant is voor ons het uitgangspunt." },
+          ]}
+        />
+        <div className="grid gap-4">
+          <figure className="werkbon">
+            <FrameImage photo={gevel} sizes="(max-width: 1024px) 100vw, 480px" />
+            <figcaption className="werkbon-caption">{gevel.stamp}</figcaption>
+          </figure>
+          <figure className="werkbon max-w-[480px]">
+            <FrameImage photo={windmill} sizes="480px" />
+            <figcaption className="werkbon-caption">{windmill.stamp}</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div className="mx-auto max-w-6xl space-y-4 px-5 pb-6">
         <p>
-          Bij Alferink Schilderwerken kunt u terecht voor binnen- en buitenschilderwerk, zoals het schilderen van
-          kozijnen en deuren en het sausen van plafonds en wanden. Muren, plafond en kozijnen kunnen wij ook spuiten.
-          Dat geeft een strakke afwerking. Meer daarover staat bij{" "}
+          Het werk loopt van woningen en bedrijfspanden tot scholen, bruggen, windmolens, villa’s en landhuizen. Voor
+          gemeenten schilderen wij ook monumentale panden, parkeermeters en gemeente paaltjes. Meer over gespoten
+          afwerking staat bij{" "}
           <Link href="/spuitwerk" className="text-link underline underline-offset-4">
             spuitwerk
           </Link>
           .
-        </p>
-        <p>
-          Tevens bieden wij onderhoudscontracten aan, waardoor uw woning of pand periodiek wordt bijgehouden. Zo
-          zorgen wij ervoor dat uw woning of pand goed in de verf staat. Uw eisen en wensen staan bij ons centraal.
         </p>
         <p>Hieronder foto’s van schilderwerk, een karwei saus- en schilderwerk in Hengelo, en een karwei in Doetinchem.</p>
       </div>

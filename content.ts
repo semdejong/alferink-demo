@@ -108,12 +108,49 @@ export const content = {
   facts: ["Sinds 1997", "Haaksbergen", "Schilder, glas, behang, spuit", "Twente, Achterhoek, Salland"],
 
   reasons: [
-    "24-uur glasservice",
-    "Jarenlange ervaring",
-    "Productkennis & voorlichting",
-    "Zeer flexibel",
-    "Afspraak is afspraak",
-    "Persoonlijk contact",
+    {
+      title: "24-uur glasservice",
+      text: "Moet uw glas per direct worden vervangen? Wij komen snel naar u toe om het glaswerk te repareren.",
+    },
+    {
+      title: "Jarenlange ervaring",
+      text: "Johan Alferink heeft meer dan 35 jaar ervaring. In 1997 heeft hij Alferink Schilderwerken opgericht.",
+    },
+    {
+      title: "Productkennis & voorlichting",
+      text: "Wij adviseren u graag vrijblijvend over de mogelijkheden, of het nu om verf, behang of beglazing gaat.",
+    },
+    {
+      title: "Zeer flexibel",
+      text: "Voor particulieren en zakelijke opdrachtgevers. Wij komen graag langs om de situatie ter plekke te bekijken.",
+    },
+    {
+      title: "Afspraak is afspraak",
+      text: "Met opdrachtgevers maken wij duidelijke afspraken. Kwaliteit staat daarbij voorop.",
+    },
+    {
+      title: "Persoonlijk contact",
+      text: "Uw eisen en wensen staan bij ons centraal. Bel of mail ons gerust.",
+    },
+  ],
+
+  voorWie: ["Particulieren", "Bedrijven", "Woningbouwcorporaties", "Gemeenten", "Instellingen"],
+
+  archivePlaces: [
+    { label: "Haaksbergen", href: "/projecten#schoorsteen-haaksbergen" },
+    { label: "Hengelo", href: "/projecten#hengelo" },
+    { label: "Doetinchem", href: "/projecten#doetinchem" },
+    { label: "Almelo", href: "/projecten#almelo" },
+    { label: "Deventer", href: "/projecten#deventer" },
+    { label: "Eibergen", href: "/projecten#eibergen" },
+    { label: "Wildervank", href: "/projecten#wildervank" },
+    { label: "Musselkanaal", href: "/projecten#musselkanaal" },
+    { label: "Ens", href: "/projecten#ens" },
+    { label: "Dirkshorn", href: "/projecten#dirkshorn" },
+    { label: "Hoofddorp", href: "/projecten#hoofddorp" },
+    { label: "Almere", href: "/projecten#almere" },
+    { label: "Bolsward", href: "/projecten#bolsward-voor" },
+    { label: "Maasvlakte", href: "/projecten#maasvlakte" },
   ],
 
   faqs: [
@@ -135,7 +172,15 @@ export const content = {
     },
     {
       q: "In welke regio werken jullie?",
-      a: "Vanaf Haaksbergen zijn wij actief in de regio’s Twente, Achterhoek en Salland, maar ook daarbuiten.",
+      a: "Vanaf Haaksbergen zijn wij actief in de regio’s Twente, Achterhoek en Salland, maar ook daarbuiten. In het fotoarchief staan onder meer Hengelo, Doetinchem, Almelo, Deventer, Bolsward en de Maasvlakte.",
+    },
+    {
+      q: "Welke glassoorten plaatsen jullie?",
+      a: "HR++ glas, Triple glas, hardglas, gefigureerd glas, glas in lood, veiligheidsglas, spiegels en hardglazen deuren. Dat doen wij kleinschalig en projectmatig.",
+    },
+    {
+      q: "Voor wie werken jullie?",
+      a: "Voor particulieren, bedrijven, woningbouwcorporaties, gemeenten en instellingen. Een instelling kan bijvoorbeeld een school zijn. Voor gemeenten denken wij aan monumentale panden, parkeermeters en gemeente paaltjes.",
     },
   ],
 
