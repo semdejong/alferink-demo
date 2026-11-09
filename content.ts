@@ -1,102 +1,109 @@
 /**
- * ÉÉN bestand om aan te passen per demo.
- * Kopieer de starter, vul hieronder de gegevens van de prospect in, klaar.
+ * J & J Alferink Schilderwerken — alleen geverifieerde feiten van hun site.
  */
 export const content = {
-  // Slug = Vercel-project- en GitHub-reponaam (eindigt op "-demo"). Wordt door scripts/new-demo.sh gezet.
-  // Ook de "data-demo" voor de Sleads demo-analytics tracker.
   slug: "alferink-demo",
 
   company: {
-    name: "Voorbeeldbedrijf",
-    tagline: "Vakmanschap uit de regio, sinds 1998",
+    name: "J & J Alferink Schilderwerken",
+    shortName: "J & J Alferink",
+    tagline: "Schilder, glas & spuitwerken · Haaksbergen",
     description:
-      "Wij helpen particulieren en bedrijven met betrouwbaar werk, eerlijk advies en een persoonlijke aanpak.",
-    logo: "/logo.png", // zet het logo in /public en pas het pad aan ("" = alleen tekst)
-    city: "Utrecht",
+      "Schilder-, glas-, behang- en spuitwerk vanuit Haaksbergen. Opgericht in 1997 door Johan Alferink. Actief in Twente, Achterhoek en Salland.",
+    logo: "/img/logo/logo.png",
+    city: "Haaksbergen",
+    region: "Twente, Achterhoek en Salland",
   },
 
-  // Huisstijlkleuren van de prospect (hex)
   colors: {
-    primary: "#1d4ed8",
+    primary: "#0674CB",
     primaryForeground: "#ffffff",
-    accent: "#f59e0b",
-    background: "#ffffff",
-    foreground: "#0f172a",
-    muted: "#f1f5f9",
+    accent: "#2E9A32",
+    background: "#F3F1EB",
+    foreground: "#121D1F",
+    muted: "#FFFFFF",
+    ink: "#121D1F",
+    bladgroen: "#2E9A32",
+    bladgroenText: "#1F7A24",
+    glasblauw: "#0674CB",
+    papier: "#F3F1EB",
+    kitgrijs: "#6B7280",
+    signaalrood: "#C62828",
+    amber: "#E5A100",
   },
 
   seo: {
-    title: "Voorbeeldbedrijf | Vakmanschap uit Utrecht",
-    description: "Conceptwebsite voor Voorbeeldbedrijf.",
+    title: "J & J Alferink Schilderwerken | Schilder, glas & spuitwerk Haaksbergen",
+    description:
+      "Schilderwerk, 24-uur glasservice, behang- en spuitwerk door J & J Alferink in Haaksbergen. Bel 06-54244846.",
     lang: "nl",
   },
 
+  contact: {
+    owner: "Johan Alferink",
+    phoneDisplay: "06-54244846",
+    phoneHref: "tel:+31654244846",
+    email: "info@alferink-schilderwerken.nl",
+    emailHref: "mailto:info@alferink-schilderwerken.nl",
+    street: "Huurnerhof 7",
+    postalCode: "7481 EK",
+    city: "Haaksbergen",
+    mapsHref:
+      "https://www.google.com/maps/search/?api=1&query=Huurnerhof+7,+7481+EK+Haaksbergen",
+  },
+
   nav: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Over ons", href: "#over-ons" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Schilderwerk", href: "/schilderwerk" },
+    { label: "Glaswerk", href: "/glaswerk" },
+    { label: "Behangwerk", href: "/behangwerk" },
+    { label: "Spuitwerk", href: "/spuitwerk" },
+    { label: "Projecten", href: "/projecten" },
+    { label: "Over Johan", href: "/over-johan" },
+    { label: "Contact", href: "/contact" },
   ],
 
   hero: {
-    title: "Vakwerk waar u op kunt bouwen",
+    title: "Schilder, glas en spuitwerk vanuit Haaksbergen — sinds 1997.",
     subtitle:
-      "Snel geregeld, duidelijk geprijsd en netjes opgeleverd. Vraag vandaag nog vrijblijvend een offerte aan.",
-    primaryCta: { label: "Offerte aanvragen", href: "#contact" },
-    secondaryCta: { label: "Bekijk onze diensten", href: "#diensten" },
-    image: "", // bv. "/hero.jpg" in /public of een externe URL; leeg = kleurverloop
-    highlights: ["25+ jaar ervaring", "Gratis advies aan huis", "Garantie op al ons werk"],
+      "Johan Alferink en team: binnen- en buitenschilderwerk, 24-uur glasservice, behangen, spuitwerk en dakcoating in Twente, Achterhoek en Salland.",
+    primaryCta: { label: "Bel 06-54244846", href: "tel:+31654244846" },
+    secondaryCta: { label: "Offerte aanvragen", href: "/offerte" },
+    image: "/img/schilderwerk/img-1210.jpg",
+    highlights: ["Sinds 1997", "24-uur glasservice", "Haaksbergen e.o."],
   },
 
   services: {
-    title: "Onze diensten",
-    intro: "Alles onder één dak, van eerste advies tot oplevering.",
+    title: "Onze werkzaamheden",
+    intro: "Schilderen, glas zetten, behangen, spuiten en dakcoating — voor particulieren en zakelijke opdrachtgevers.",
     items: [
-      { icon: "🛠️", title: "Dienst één", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "📐", title: "Dienst twee", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "✅", title: "Dienst drie", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
+      { icon: "", title: "Schilderwerk", text: "Binnen- en buitenschilderwerk: kozijnen, deuren, sausen van plafonds en wanden. Ook gespoten afwerking en onderhoudscontracten." },
+      { icon: "", title: "Glaswerk", text: "HR++, Triple, hardglas, glas in lood en meer. Tien jaar garantie op isolerende beglazing. 24-uur glasservice." },
+      { icon: "", title: "Behangwerk", text: "Vinyl, vliesbehang, glasweefsel en normaal behang — advies op maat." },
+      { icon: "", title: "Spuitwerk & dak", text: "Spuiten van deuren, kozijnen, wanden, damwanden; dakreiniging en dakcoating." },
     ],
   },
 
   about: {
-    title: "Over ons",
+    title: "Over J & J Alferink",
     text: [
-      "Wat begon als een klein familiebedrijf is uitgegroeid tot een vertrouwd adres in de regio.",
-      "We werken met vaste vakmensen, houden ons aan afspraken en staan ook na de oplevering voor u klaar.",
+      "In 1997 heeft Johan Alferink Alferink Schilderwerken opgericht. Hij heeft meer dan 35 jaar ervaring op het gebied van schilder-, glas-, behang- en spuitwerk.",
+      "Onze medewerkers hebben jarenlange ervaring en zijn gediplomeerd. Voor particulieren en zakelijke klanten zijn wij vanaf Haaksbergen actief in Twente, Achterhoek en Salland, maar ook daarbuiten.",
     ],
-    image: "", // optioneel
-    stats: [
-      { value: "25+", label: "jaar ervaring" },
-      { value: "1.200+", label: "tevreden klanten" },
-      { value: "9,2", label: "gemiddeld cijfer" },
-    ],
+    image: "/img/bus/bus-alferink.jpg",
+    stats: [],
   },
 
   reviews: {
-    title: "Wat klanten zeggen",
-    items: [
-      { name: "Familie Jansen", text: "Netjes en snel gewerkt, precies volgens afspraak. Echt een aanrader!", rating: 5 },
-      { name: "Petra de Vries", text: "Duidelijke communicatie en een eerlijke prijs. We komen zeker terug.", rating: 5 },
-      { name: "Mark Bakker", text: "Vakkundig advies en mooi resultaat. Heel tevreden.", rating: 5 },
-    ],
+    title: "",
+    items: [],
   },
 
-  contact: {
-    title: "Neem contact op",
-    text: "Bel, mail of kom langs. We reageren binnen één werkdag.",
-    phone: "030 123 45 67",
-    email: "info@voorbeeldbedrijf.nl",
-    address: "Voorbeeldstraat 1, 1234 AB Utrecht",
-    openingHours: ["Ma t/m vr: 08:00 – 17:30", "Za: 09:00 – 13:00"],
-    whatsapp: "", // bv. "31612345678" (zonder +)
-    cta: { label: "Bel direct", href: "tel:0301234567" },
+  contactBlock: {
+    title: "Contact",
+    text: "Heeft u vragen of wilt u een vrijblijvende offerte? Bel of mail ons.",
   },
 
   footer: {
-    kvk: "", // bv. "KvK 12345678"
-    socials: [] as { label: string; href: string }[],
+    text: "J & J Alferink Schilderwerken · Haaksbergen",
   },
 };
-
-export type Content = typeof content;
