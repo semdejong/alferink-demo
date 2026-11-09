@@ -1,14 +1,46 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Figtree, IBM_Plex_Mono, Saira, Saira_Condensed } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
 import SleadsBadge from "@/components/SleadsBadge";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import StickyBar from "@/components/StickyBar";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-figtree",
+  display: "swap",
+});
+
+const saira = Saira({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-saira",
+  display: "swap",
+});
+
+const sairaCondensed = Saira_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-saira-condensed",
+  display: "swap",
+});
+
+const plex = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
+  title: {
+    default: content.seo.title,
+    template: "%s · J & J Alferink",
+  },
   description: content.seo.description,
   robots: {
     index: false,
@@ -21,7 +53,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: content.colors.primary };
 
-// Sleads demo-analytics (cookieloos). Events tellen alleen voor slugs die via POST /api/demos geregistreerd zijn.
 const TRACKER_SRC = "https://sleads-demo-analytics.vercel.app/t.js";
 const TRACKER_ENDPOINT = "https://basic-tiger-117.convex.site/track";
 
@@ -37,13 +68,24 @@ const themeVars = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html
+      lang={content.seo.lang}
+      style={themeVars}
+      className={`${figtree.variable} ${saira.variable} ${sairaCondensed.variable} ${plex.variable} h-full scroll-smooth antialiased`}
+    >
       <head>
         <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
       </head>
-      <body className="min-h-full flex flex-col">
-        {children}
-        <SleadsBadge />
+      <body className="min-h-full bg-papier pb-16 text-ink md:pb-0">
+        <div id="site" className="flex min-h-full flex-col">
+          <Header />
+          <main id="inhoud" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <StickyBar />
+          <SleadsBadge />
+        </div>
       </body>
     </html>
   );
